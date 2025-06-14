@@ -18,6 +18,9 @@
   "devDependencies": {
     "typescript": "^5.0.0"
   },
+  "peerDependencies": {
+    "payload": "^3.42.0"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
