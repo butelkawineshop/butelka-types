@@ -1,6 +1,6 @@
 {
   "name": "@butelkawineshop/types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Types for Butelka project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
