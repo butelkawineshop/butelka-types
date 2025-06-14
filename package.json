@@ -1,7 +1,7 @@
 {
-  "name": "@butelka/types",
+  "name": "@butelkawineshop/types",
   "version": "1.0.0",
-  "description": "Shared types for Butelka projects",
+  "description": "Types for Butelka project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,10 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.4.1",
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "payload": "^3.42.0"
+    "payload": "^3.42.0",
+    "typescript": "^5.4.2"
   },
   "peerDependencies": {
     "payload": "^3.42.0"
