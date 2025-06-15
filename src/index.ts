@@ -337,6 +337,7 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
+  markdown?: string | null;
   cloudflareId?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -358,7 +359,7 @@ export interface Media {
       filesize?: number | null;
       filename?: string | null;
     };
-    'wine-cards'?: {
+    winecards?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -903,6 +904,7 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  markdown?: string | null;
   relatedPosts?: (number | Post)[] | null;
   categories?: (number | Category)[] | null;
   meta?: {
@@ -990,6 +992,7 @@ export interface MarketingEmail {
     };
     [k: string]: unknown;
   };
+  markdown?: string | null;
   variables?:
     | {
         key: string;
@@ -1119,6 +1122,7 @@ export interface Slideshow {
       };
       [k: string]: unknown;
     } | null;
+    markdown?: string | null;
     /**
      * Order in which this slide appears
      */
@@ -2244,6 +2248,7 @@ export interface PostsSelect<T extends boolean = true> {
   title?: T;
   heroImage?: T;
   content?: T;
+  markdown?: T;
   relatedPosts?: T;
   categories?: T;
   meta?:
@@ -2274,6 +2279,7 @@ export interface PostsSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  markdown?: T;
   cloudflareId?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2299,7 +2305,7 @@ export interface MediaSelect<T extends boolean = true> {
               filesize?: T;
               filename?: T;
             };
-        'wine-cards'?:
+        winecards?:
           | T
           | {
               url?: T;
@@ -2377,6 +2383,7 @@ export interface MarketingEmailsSelect<T extends boolean = true> {
   type?: T;
   subject?: T;
   content?: T;
+  markdown?: T;
   variables?:
     | T
     | {
@@ -2468,6 +2475,7 @@ export interface SlideshowsSelect<T extends boolean = true> {
         headline?: T;
         tagline?: T;
         content?: T;
+        markdown?: T;
         order?: T;
         id?: T;
       };
@@ -2812,15 +2820,10 @@ export interface TaskSchedulePublish {
   input: {
     type?: ('publish' | 'unpublish') | null;
     locale?: string | null;
-    doc?:
-      | ({
-          relationTo: 'pages';
-          value: number | Page;
-        } | null)
-      | ({
-          relationTo: 'posts';
-          value: number | Post;
-        } | null);
+    doc?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
     global?: string | null;
     user?: (number | null) | User;
   };
